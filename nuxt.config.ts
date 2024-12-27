@@ -11,14 +11,7 @@ export default defineNuxtConfig({
         {
           charset: "utf-8",
         },
-      ],
-      script: [
-        {
-          src: 'https://api.stage.codewithbeto.dev/script.js',
-          defer: true,
-          'data-website-id': process.env.UMAMI_KEY
-        }
-      ],
+      ]
     },
   },
   css: ["~/assets/css/global.css", "~/assets/css/main.css"],
