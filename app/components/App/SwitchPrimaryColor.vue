@@ -1,29 +1,35 @@
 <template>
     <UDropdownMenu :items="items">
         <UButton aria-label="button to switch theme dark to light" variant="link" color="primary" size="lg"
-            icon="i-clarity-color-palette-solid" class="cursor-pointer" />
+            icon="i-lucide-palette" class="cursor-pointer" />
         <template #colors>
-            <div class="relative z-40 grid w-full grid-cols-5 gap-2">
+            <div class="relative z-40 grid w-full grid-cols-5">
                 <template v-for="(color, index) in primaryColors" :key="index">
                     <div class="col-span-1 flex items-center justify-center">
-                        <UButton variant="link" @click.stop.prevent="setPrimaryColor(color)" class="cursor-pointer">
-                            <span class="inline-block size-8 rounded-full"
-                                :class="`bg-[var(--color-light)] dark:bg-[var(--color-dark)]`" :style="{
-                                    '--color-light': `var(--color-${color}-400)`,
-                                    '--color-dark': `var(--color-${color}-500)`
-                                }" />
-                        </UButton>
+                        <UTooltip :text="color" :content="{
+                            align: 'center',
+                            side: 'top',
+                            sideOffset: 8
+                        }">
+                            <UButton variant="link" @click.stop.prevent="setPrimaryColor(color)" class="cursor-pointer">
+                                <span class="inline-block size-6 rounded-full"
+                                    :class="`bg-[var(--color-light)] dark:bg-[var(--color-dark)]`" :style="{
+                                        '--color-light': `var(--color-${color}-400)`,
+                                        '--color-dark': `var(--color-${color}-500)`
+                                    }" />
+                            </UButton>
+                        </UTooltip>
                     </div>
                 </template>
             </div>
         </template>
         <template #gray>
-            <div class="relative z-40 grid w-full grid-cols-5 gap-2">
+            <div class="relative z-40 grid w-full grid-cols-5">
                 <template v-for="(color, index) in neutralColors" :key="index">
                     <div class="col-span-1 flex items-center justify-center">
                         <UButton variant="link" square @click.stop.prevent="setNeutralColor(color)"
                             class="cursor-pointer">
-                            <span class="inline-block size-8 rounded-full"
+                            <span class="inline-block size-6 rounded-full"
                                 :class="`bg-[var(--color-light)] dark:bg-[var(--color-dark)]`" :style="{
                                     '--color-light': `var(--color-${color}-400)`,
                                     '--color-dark': `var(--color-${color}-500)`
@@ -50,7 +56,7 @@ const items = [
     ],
 ];
 
-const primaryColors = ['red', 'orange', 'amber', 'yellow', 'lime', 'green', 'emerald', 'teal', 'cyan', 'sky', 'blue', 'indigo', 'violet', 'purple', 'fuchsia', 'pink', 'rose']
+const primaryColors = ['rose', 'red', 'orange', 'amber', 'yellow', 'lime', 'green', 'emerald', 'teal', 'cyan', 'sky', 'blue', 'indigo', 'violet', 'purple', 'fuchsia', 'pink']
 
 const neutralColors = ['slate', 'gray', 'zinc', 'neutral', 'stone']
 
