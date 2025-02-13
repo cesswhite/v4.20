@@ -16,5 +16,9 @@
     "pinia": "3.0.1",
     "vue": "latest",
     "vue-router": "latest"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "vue-tsc": "^2.2.0"
   }
 }
