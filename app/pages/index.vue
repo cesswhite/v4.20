@@ -31,8 +31,6 @@
 
 <script setup>
 /* Delete this and start building your app. Happy coding! */
-import { useIndexStore } from '~/stores';
-
 const { name } = storeToRefs(useIndexStore());
 const toast = useToast();
 
