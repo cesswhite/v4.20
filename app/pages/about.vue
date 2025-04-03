@@ -9,8 +9,10 @@
                 <h1 class="font-extrabold text-5xl text-dark-950 font-family-instrument italic dark:text-dark-50">
                     About
                 </h1>
-                <p class="font-normal text-base text-center text-dark-950/60 dark:text-dark-50/60">
-                    Hey! <span class="font-bold italic">{{ name }}</span>
+                <p class="font-normal text-base text-center text-dark-900/60 dark:text-dark-50/60">
+                    Hey
+                    <NuxtImg src="https://source.unsplash.com/random" alt="Eco Development Studios" class="w-12 h-12" />
+                    <span class="font-bold italic">{{ name }}</span>
                     <br>
                     <br>
                     v4.20 is a carefully crafted Nuxt starter template designed with a focus on minimalism,
