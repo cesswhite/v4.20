@@ -27,7 +27,15 @@
             <div class="relative z-40 grid w-full grid-cols-5">
                 <template v-for="(color, index) in neutralColors" :key="index">
                     <div class="col-span-1 flex items-center justify-center">
-                        <UButton variant="link" square @click.stop.prevent="setNeutralColor(color)"
+                        <UButton v-if="color === 'neutral'" variant="link" square
+                            @click.stop.prevent="setNeutralColor(color)" class="cursor-pointer">
+                            <span class="inline-block size-6 rounded-full"
+                                :class="`bg-[var(--color-light)] dark:bg-[var(--color-dark)]`" :style="{
+                                    '--color-light': `var(--ui-color-${color}-400)`,
+                                    '--color-dark': `var(--ui-color-${color}-500)`
+                                }" />
+                        </UButton>
+                        <UButton v-else variant="link" square @click.stop.prevent="setNeutralColor(color)"
                             class="cursor-pointer">
                             <span class="inline-block size-6 rounded-full"
                                 :class="`bg-[var(--color-light)] dark:bg-[var(--color-dark)]`" :style="{
@@ -35,6 +43,7 @@
                                     '--color-dark': `var(--color-${color}-500)`
                                 }" />
                         </UButton>
+
                     </div>
                 </template>
             </div>
