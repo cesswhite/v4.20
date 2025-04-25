@@ -1,3 +1,5 @@
+![v4.20_cover_image](https://github.com/user-attachments/assets/751532fb-b27e-4009-a79a-553a623d9196)
+
 # v4.20: The Ultimate Opinionated Nuxt 3 Starter Template
 
 Minimal, blazing fast, and designed with developers in mind, v4.20 is your go-to starting point for modern web projects.
