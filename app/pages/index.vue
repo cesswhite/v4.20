@@ -6,7 +6,8 @@
                 <div class="size-12">
                     <AppLogo />
                 </div>
-                <h1 class="font-extrabold text-5xl text-dark-900 font-family-instrument italic dark:text-dark-50">v4.20
+                <h1 class="font-extrabold text-5xl text-dark-900 font-family-instrument italic dark:text-dark-50">
+                    v4.20
                 </h1>
                 <p class="font-normal text-base text-center text-dark-900/60 dark:text-dark-50/60">
                     Opinionated Starter Template
@@ -18,7 +19,7 @@
                     <AppSwitchPrimaryColor />
                 </div>
                 <div class="flex flex-col items-center gap-y-4 w-full">
-                    <UInput v-model="name" label="Name" placeholder="Name" />
+                    <UInput v-model="name" label="Name" placeholder="Name" @keyup.enter="handleEnter" />
                     <UButton @click="openToast" variant="solid" color="primary">
                         Enter
                     </UButton>
@@ -33,6 +34,12 @@
 /* Delete this and start building your app. Happy coding! */
 const { name } = storeToRefs(useIndexStore());
 const toast = useToast();
+
+function handleEnter() {
+    if (name.value.trim()) {
+        openToast();
+    }
+}
 
 function openToast() {
     toast.add({
