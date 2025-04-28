@@ -10,7 +10,9 @@
                     About
                 </h1>
                 <p class="font-normal text-base text-center text-dark-900/60 dark:text-dark-50/60">
-                    Hey <span class="font-bold italic">{{ name }}</span>
+                    Hey
+                    <NuxtImg src="https://source.unsplash.com/random" alt="Eco Development Studios" class="w-12 h-12" />
+                    <span class="font-bold italic">{{ name }}</span>
                     <br>
                     <br>
                     v4.20 is an opinionated starter template that is minimal, fast, and developer-friendly created by
