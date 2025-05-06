@@ -6,21 +6,23 @@
                 <div class="size-12">
                     <AppLogo />
                 </div>
-                <h1 class="font-extrabold text-5xl text-dark-900 font-family-instrument italic dark:text-dark-50">
+                <h1 class="font-extrabold text-5xl text-dark-950 font-family-instrument italic dark:text-dark-50">
                     v4.20
                 </h1>
-                <p class="font-normal text-base text-center text-dark-900/60 dark:text-dark-50/60">
+                <p
+                    class="font-normal text-base font-family-inter tracking-tighter text-center text-dark-950/60 dark:text-dark-50/60">
                     Opinionated Starter Template
                     <br>
                     Minimal, Fast, and Developer-Friendly
                 </p>
                 <div class="w-full flex items-center justify-center gap-2">
-                    <AppSwitchMode />
-                    <AppSwitchPrimaryColor />
+                    <LazyAppSwitchMode />
+                    <LazyAppSwitchPrimaryColor />
                 </div>
-                <div class="flex flex-col items-center gap-y-4 w-full">
-                    <UInput v-model="name" label="Name" placeholder="Name" @keyup.enter="handleEnter" />
-                    <UButton @click="openToast" variant="solid" color="primary">
+                <div class="flex flex-col items-center gap-y-4 w-full md:w-1/2">
+                    <UInput v-model="name" label="Name" placeholder="Name" class="w-full" size="lg" variant="outline"
+                        @keyup.enter="handleEnter" />
+                    <UButton block @click="openToast" variant="solid" color="primary" size="lg">
                         Enter
                     </UButton>
                 </div>
