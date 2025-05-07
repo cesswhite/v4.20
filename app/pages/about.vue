@@ -10,21 +10,22 @@
                     About
                 </h1>
                 <p class="font-normal text-base text-center text-dark-950/60 dark:text-dark-50/60">
-                    Hey <span class="font-bold italic">{{ name }}</span>
+                    Hey! <span class="font-bold italic">{{ name }}</span>
                     <br>
                     <br>
-                    v4.20 is a carefully crafted Nuxt starter template designed with a focus on minimalism, performance,
-                    and
-                    developer experience.
-                    <br>
-                    Developed with ❤️ by
+                    v4.20 is a carefully crafted Nuxt starter template designed with a focus on minimalism,
+                    performance, and developer experience.
+                </p>
+                <div
+                    class="flex items-center justify-center gap-x-2 text-dark-950/40 hover:text-dark-950/70 dark:text-dark-50/40 dark:hover:text-dark-50/70 text-sm">
+                    <span class="inline-block">Developed with ❤️ by</span>
                     <ULink href="https://ecostudios.dev/" target="_blank" color="primary" class="underline">
                         Eco Development Studios
                     </ULink>
-                </p>
+                </div>
                 <div class="flex flex-col items-center gap-y-4 w-full">
                     <UButton @click="$router.back()" variant="solid" color="primary" icon="i-lucide-arrow-left"
-                        size="lg">
+                        size="lg" class="cursor-pointer">
                         Back to Home
                     </UButton>
                 </div>
@@ -40,17 +41,17 @@ const { name } = storeToRefs(useIndexStore());
 /* // */
 
 useSeoMeta({
-    title: "v4.20 | Your About Title",
-    ogTitle: "v4.20 | Your About Title",
-    description: "Opinionated Starter Template Minimal, Fast, and Developer-Friendly",
-    ogDescription: "Opinionated Starter Template Minimal, Fast, and Developer-Friendly",
-    ogImage: "/default-og-image.jpg",
+    title: "v4.20 | About",
+    ogTitle: "v4.20 | About",
+    description: "Opinionated Nuxt Starter Template Minimal, Fast, and Developer-Friendly by Eco Development Studios",
+    ogDescription: "Opinionated Nuxt Starter Template Minimal, Fast, and Developer-Friendly by Eco Development Studios",
+    ogImage: "https://res.cloudinary.com/dpvsklksg/image/upload/ecov4/v420-og-image.webp",
     twitterCard: "summary_large_image",
-    ogUrl: 'https://www.yourproject.com/',
-    twitterImage: "/default-og-image.jpg",
+    ogUrl: 'https://v420.ecostudios.dev/about',
+    twitterImage: "https://res.cloudinary.com/dpvsklksg/image/upload/ecov4/v420-og-image.webp",
     twitterCard: "summary_large_image",
-    twitterTitle: "v4.20 | Your About Title",
-    twitterDescription: "Opinionated Starter Template Minimal, Fast, and Developer-Friendly",
+    twitterTitle: "v4.20 | About",
+    twitterDescription: "Opinionated Nuxt Starter Template Minimal, Fast, and Developer-Friendly by Eco Development Studios",
     ogImageWidth: 1200,
     ogImageHeight: 630,
 });

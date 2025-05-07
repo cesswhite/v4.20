@@ -19,7 +19,7 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
-  compatibilityDate: '2024-11-01',
+  compatibilityDate: '2025-05-07',
   modules: ['@nuxt/ui', '@pinia/nuxt'],
   typescript: {
     typeCheck: true
