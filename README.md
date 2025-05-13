@@ -1,4 +1,5 @@
-![v4.20_cover_image](https://github.com/user-attachments/assets/751532fb-b27e-4009-a79a-553a623d9196)
+![v4.20_cover_image](https://github.com/user-attachments/assets/db3b68fb-4677-4326-96b5-8a24e92a91a4)
+
 
 # v4.20: The Ultimate Opinionated Nuxt 3 Starter Template
 
