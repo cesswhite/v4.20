@@ -1,26 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  app: {
-    head: {
-      meta: [
-        {
-          name: "viewport",
-          content:
-            "width=device-width, initial-scale=1",
-        },
-        {
-          charset: "utf-8",
-        },
-      ]
-    },
-  },
-  css: ["~/assets/css/global.css", "~/assets/css/main.css"],
+  modules: ['@nuxt/ui', '@pinia/nuxt'],
   devtools: { enabled: true },
+  css: ["~/assets/css/global.css", "~/assets/css/main.css"],
   future: {
     compatibilityVersion: 4,
   },
   compatibilityDate: '2025-05-07',
-  modules: ['@nuxt/ui', '@pinia/nuxt'],
   typescript: {
     typeCheck: true
   }
