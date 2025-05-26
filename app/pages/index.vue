@@ -20,8 +20,8 @@
                     <LazyAppSwitchPrimaryColor />
                 </div>
                 <div class="flex flex-col items-center gap-y-4 w-full md:w-1/2">
-                    <UInput v-model="name" label="Name" placeholder="Name" class="w-full" size="lg" variant="outline"
-                        @keyup.enter="handleEnter" />
+                    <UInput v-model.trim="name" label="Name" placeholder="Name" class="w-full" size="lg"
+                        variant="outline" @keyup.enter="handleGoToAbout" />
                     <UButton block @click="openToast" variant="solid" color="primary" size="lg" class="cursor-pointer">
                         Enter
                     </UButton>
@@ -37,13 +37,16 @@
 const { name } = storeToRefs(useIndexStore());
 const toast = useToast();
 
-function handleEnter() {
-    if (name.value.trim()) {
+function handleGoToAbout() {
+    if (!name.value) {
         openToast();
     }
 }
 
 function openToast() {
+    if (!name.value) {
+        return;
+    }
     toast.add({
         title: 'Hey!',
         description: 'Hello! You just clicked the button!',
