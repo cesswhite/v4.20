@@ -2,32 +2,26 @@
     <NuxtLayout name="default">
         <!-- Delete this and start building your app. Happy coding! -->
         <div class="h-dvh flex items-center justify-center">
-            <div class="flex flex-col items-center justify-center gap-y-4 w-full mx-auto md:w-1/3">
-                <div class="size-12">
-                    <AppLogo />
+            <div class="flex flex-col items-center justify-center gap-y-4 w-full mx-auto md:w-1/2 xl:w-1/3">
+                <div class="flex flex-col items-center justify-center gap-y-2">
+                    <NuxtImg src="https://picsum.photos/420/420" alt="Random Image from Picsum"
+                        class="size-16 mx-auto rounded-full" :placeholder="[50, 25, 100, 5]" loading="lazy" />
+                    <span class="font-bold"> Hello, {{ name }}!</span>
+                    <p class="font-normal text-base text-center text-dark-950/60 dark:text-dark-50/60">
+                        v4.20 is a carefully crafted Nuxt starter template designed with a focus on minimalism,
+                        performance, and developer experience.
+                    </p>
                 </div>
-                <h1 class="font-extrabold text-5xl text-dark-950 font-family-instrument italic dark:text-dark-50">
-                    About
-                </h1>
-                <p class="font-normal text-base text-center text-dark-900/60 dark:text-dark-50/60">
-                    Hey
-                    <NuxtImg src="https://source.unsplash.com/random" alt="Eco Development Studios" class="w-12 h-12" />
-                    <span class="font-bold italic">{{ name }}</span>
-                    <br>
-                    <br>
-                    v4.20 is a carefully crafted Nuxt starter template designed with a focus on minimalism,
-                    performance, and developer experience.
-                </p>
-                <div
-                    class="flex items-center justify-center gap-x-2 text-dark-950/40 hover:text-dark-950/70 dark:text-dark-50/40 dark:hover:text-dark-50/70 text-sm">
-                    <span class="inline-block">Developed with ❤️ by</span>
-                    <ULink href="https://ecostudios.dev/" target="_blank" color="primary" class="underline">
+                <div class="flex items-center gap-x-1.5 justify-center text-dark-950 dark:text-dark-50 text-sm">
+                    <span class="inline-block text-dark-950 dark:text-dark-50 w-auto">Developed with ❤️ by</span>
+                    <UButton to="https://ecostudios.dev/" target="_blank" variant="link" color="primary"
+                        class="underline p-0">
                         Eco Development Studios
-                    </ULink>
+                    </UButton>
                 </div>
                 <div class="flex flex-col items-center gap-y-4 w-full">
-                    <UButton @click="$router.back()" variant="solid" color="primary" icon="i-lucide-arrow-left"
-                        size="lg" class="cursor-pointer">
+                    <UButton @click="$router.back()" variant="link" color="primary" icon="i-lucide-arrow-left"
+                        class="cursor-pointer">
                         Back to Home
                     </UButton>
                 </div>
