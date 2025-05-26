@@ -1,8 +1,8 @@
 <template>
     <NuxtLayout name="default">
         <!-- Delete this and start building your app. Happy coding! -->
-        <div class="h-dvh flex items-center justify-center">
-            <div class="flex flex-col items-center justify-center gap-y-4 w-full mx-auto md:w-1/3">
+        <div class="h-dvh flex items-center justify-center px-4 md:px-0">
+            <div class="flex flex-col items-center justify-center gap-y-4 w-full mx-auto md:w-1/2 xl:w-1/3">
                 <div class="size-12">
                     <AppLogo />
                 </div>
@@ -19,7 +19,7 @@
                     <LazyAppSwitchMode />
                     <LazyAppSwitchPrimaryColor />
                 </div>
-                <div class="flex flex-col items-center gap-y-4 w-full md:w-1/2">
+                <div class="flex flex-col items-center gap-y-4 mx-auto w-full sm:w-1/2 xl:w-1/3">
                     <UInput v-model.trim="name" label="Name" placeholder="Name" class="w-full" size="lg"
                         variant="outline" @keyup.enter="handleGoToAbout" />
                     <UButton block @click="openToast" variant="solid" color="primary" size="lg" class="cursor-pointer">
