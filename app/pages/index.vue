@@ -1,8 +1,8 @@
 <template>
     <NuxtLayout name="default">
         <!-- Delete this and start building your app. Happy coding! -->
-        <div class="h-dvh flex items-center justify-center">
-            <div class="flex flex-col items-center justify-center gap-y-4 w-full mx-auto md:w-1/3">
+        <div class="h-dvh flex items-center justify-center px-4 md:px-0">
+            <div class="flex flex-col items-center justify-center gap-y-4 w-full mx-auto md:w-1/2 xl:w-1/3">
                 <div class="size-12">
                     <AppLogo />
                 </div>
@@ -19,10 +19,11 @@
                     <LazyAppSwitchMode />
                     <LazyAppSwitchPrimaryColor />
                 </div>
-                <div class="flex flex-col items-center gap-y-4 w-full md:w-1/2">
-                    <UInput v-model.trim="name" label="Name" placeholder="Name" class="w-full" size="lg"
-                        variant="outline" @keyup.enter="handleGoToAbout" />
-                    <UButton block @click="openToast" variant="solid" color="primary" size="lg" class="cursor-pointer">
+                <div class="flex flex-col items-center gap-y-4 mx-auto w-full sm:w-1/2 xl:w-1/3">
+                    <UInput v-model="name" label="Name" placeholder="Name" class="w-full" size="lg" variant="outline"
+                        @keyup.enter="handleGoToAbout" />
+                    <UButton block @click="handleGoToAbout" variant="solid" color="primary" size="lg"
+                        class="cursor-pointer">
                         Enter
                     </UButton>
                 </div>
@@ -32,21 +33,18 @@
     </NuxtLayout>
 </template>
 
-<script setup>
+<script setup lang="ts">
 /* Delete this and start building your app. Happy coding! */
 const { name } = storeToRefs(useIndexStore());
 const toast = useToast();
 
 function handleGoToAbout() {
-    if (!name.value) {
+    if (name.value) {
         openToast();
     }
 }
 
 function openToast() {
-    if (!name.value) {
-        return;
-    }
     toast.add({
         title: 'Hey!',
         description: 'Hello! You just clicked the button!',
@@ -55,4 +53,19 @@ function openToast() {
     navigateTo('/about')
 }
 /* // */
+
+useSeoMeta({
+    title: "v4.20 | Opinionated Nuxt Starter Template",
+    ogTitle: "v4.20 | Opinionated Nuxt Starter Template",
+    description: "Opinionated Nuxt Starter Template Minimal, Fast, and Developer-Friendly by Eco Development Studios",
+    ogDescription: "Opinionated Nuxt Starter Template Minimal, Fast, and Developer-Friendly by Eco Development Studios",
+    ogImage: "https://res.cloudinary.com/dpvsklksg/image/upload/ecov4/v420-og-image.webp",
+    twitterCard: "summary_large_image",
+    ogUrl: 'https://v420.ecostudios.dev/',
+    twitterImage: "https://res.cloudinary.com/dpvsklksg/image/upload/ecov4/v420-og-image.webp",
+    twitterTitle: "v4.20 | Opinionated Nuxt Starter Template",
+    twitterDescription: "Opinionated Nuxt Starter Template Minimal, Fast, and Developer-Friendly by Eco Development Studios",
+    ogImageWidth: 1200,
+    ogImageHeight: 630,
+});
 </script>
