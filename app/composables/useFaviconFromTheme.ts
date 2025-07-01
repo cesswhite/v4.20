@@ -1,6 +1,6 @@
 import { onMounted, watch } from 'vue'
 import { useFavicon } from '@vueuse/core'
-import FaviconSvg from 'public/icon.svg?raw'
+import FaviconSvg from '/icon.svg?raw'
 
 export function useFaviconFromTheme() {
   const colorMode = useColorMode()

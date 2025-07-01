@@ -4,8 +4,8 @@
         <div class="h-dvh flex items-center justify-center">
             <div class="flex flex-col items-center justify-center gap-y-4 w-full mx-auto md:w-1/2 xl:w-1/3">
                 <div class="flex flex-col items-center justify-center gap-y-2">
-                    <NuxtImg src="https://picsum.photos/420/420" alt="Random Image from Picsum"
-                        class="size-16 mx-auto rounded-full" :placeholder="[50, 25, 100, 5]" loading="lazy" />
+                    <NuxtImg src="https://avatars.githubusercontent.com/u/44076866?v=4" alt="My Profile Picture"
+                        class="size-16 mx-auto rounded-full" :placeholder="[50, 25, 100, 5]" preload />
                     <span class="font-bold"> Hello, {{ name }}!</span>
                     <p class="font-normal text-base text-center text-dark-950/60 dark:text-dark-50/60">
                         v4.20 is a carefully crafted Nuxt starter template designed with a focus on minimalism,
