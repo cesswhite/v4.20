@@ -57,7 +57,11 @@
                 </div>
             </template>
         </UDropdownMenu>
+        <template #fallback>
+            <USkeleton class="h-6 w-8" />
+        </template>
     </ClientOnly>
+
 </template>
 
 <script setup lang="ts">
