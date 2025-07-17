@@ -23,7 +23,7 @@ useHead({
     {
       rel: 'icon',
       type: 'image/svg+xml',
-      href: '/favicon.svg'
+      href: '/icon.svg'
     }
   ]
 })
