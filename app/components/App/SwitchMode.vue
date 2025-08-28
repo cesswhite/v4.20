@@ -6,7 +6,7 @@
                 : 'i-lucide-moon'
                 " />
         <template #fallback>
-            <USkeleton class="h-6 w-8" />
+            <USkeleton class="size-8" />
         </template>
     </ClientOnly>
 </template>
