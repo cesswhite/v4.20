@@ -1,23 +1,21 @@
 ![v4.20_cover_image](https://github.com/user-attachments/assets/db3b68fb-4677-4326-96b5-8a24e92a91a4)
 
-
-# v4.20: The Ultimate Opinionated Nuxt 3 Starter Template
+# v4.20: The Ultimate Opinionated Nuxt 4 Starter Template
 
 Minimal, blazing fast, and designed with developers in mind, v4.20 is your go-to starting point for modern web projects.
 
 ## Built on cutting-edge technologies:
 
-- Nuxt 3 for powerful, streamlined development.
-- Nuxt UI v3 for customizable and sleek UI components.
+- Nuxt 4 for powerful, streamlined development.
+- Nuxt UI v4 alpha for customizable and sleek UI components.
 - Pinia for state management simplicity.
 - Tailwind CSS v4 for responsive and modern design.
-- Fully compatible with the Nuxt v4 folder structure, this template ensures you're ready for the future of web development.
 
 Get started today with v4.20 and build faster, smarter, and better!
 
 ## Features
 
-- Nuxt 3
+- Nuxt 4
 - Pinia for state management
 - Tailwind CSS for styling
 - Dark mode support
@@ -36,18 +34,18 @@ Get started today with v4.20 and build faster, smarter, and better!
 
 1. Clone the repository:
 
-    ```sh
-    git clone https://github.com/{username}/v420.git
-    cd v420
-    ```
+   ```sh
+   git clone https://github.com/{username}/v420.git
+   cd v420
+   ```
 
 2. Install dependencies:
 
-    ```sh
-    npm install
-    # or
-    yarn install
-    ```
+   ```sh
+   npm install
+   # or
+   yarn install
+   ```
 
 ### Development
 
@@ -93,14 +91,14 @@ After building the project, you can deploy the `dist` directory to your preferre
 This project uses Pinia for state management. Example store:
 
 ```typescript
-export const useIndexStore = defineStore('useIndexStore', {
-    state: () => ({
-        name: ''
-    }),
-})
+export const useIndexStore = defineStore("useIndexStore", {
+  state: () => ({
+    name: "",
+  }),
+});
 
 if (import.meta.hot) {
-    import.meta.hot.accept(acceptHMRUpdate(useIndexStore, import.meta.hot))
+  import.meta.hot.accept(acceptHMRUpdate(useIndexStore, import.meta.hot));
 }
 ```
 
