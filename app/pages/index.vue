@@ -1,6 +1,6 @@
 <template>
     <NuxtLayout name="default">
-        <!-- Delete this and start building your app. Happy coding! -->
+        <!-- Delete this block and start building your app. Happy coding! -->
         <div class="h-dvh flex items-center justify-center px-4 md:px-0">
             <div class="flex flex-col items-center justify-center gap-y-4 w-full mx-auto md:w-1/2 xl:w-1/3">
                 <div class="size-12">
@@ -34,13 +34,19 @@
 </template>
 
 <script setup lang="ts">
-/* Delete this and start building your app. Happy coding! */
+/* Delete this block and start building your app. Happy coding! */
 const { name } = storeToRefs(useIndexStore());
 const toast = useToast();
 
 function handleGoToAbout() {
     if (name.value) {
         openToast();
+    } else {
+        toast.add({
+            title: 'Oops!',
+            description: 'Please enter your name!',
+            color: 'warning'
+        })
     }
 }
 
