@@ -37,6 +37,7 @@
 const { name } = storeToRefs(useIndexStore());
 
 function goBack() {
+    name.value = ''
     navigateTo('/')
 }
 /* // */

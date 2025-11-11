@@ -1,6 +1,6 @@
 <template>
   <NuxtLoadingIndicator />
-  <UApp>
+  <UApp :toaster="toaster">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
@@ -8,7 +8,10 @@
 </template>
 
 <script setup lang="ts">
-//See reference here: https://x.com/Atinux/status/1912803617566081396
+// See documentation here: https://ui.nuxt.com/docs/components/toast#stacked-toasts
+const toaster = { expand: false }
+
+// See documentation here: https://x.com/Atinux/status/1912803617566081396
 useFaviconFromTheme()
 
 useHead({
