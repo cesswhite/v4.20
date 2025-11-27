@@ -12,6 +12,7 @@
 
 - **[Nuxt 4](https://nuxt.com/)** - Powerful, streamlined development framework
 - **[Nuxt UI](https://ui.nuxt.com/)** - Beautiful, customizable UI components
+- **[Nuxt Image](https://image.nuxt.com/)** - Optimized images with built-in resizer and 20+ provider support
 - **[Pinia](https://pinia.vuejs.org/ssr/nuxt.html#Nuxt)** - Simple and intuitive state management
 - **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
 
@@ -22,6 +23,7 @@
 - 🎯 **Nuxt 4** - Latest version with enhanced performance
 - 🗄️ **Pinia** - Modern state management
 - 🎨 **Tailwind CSS** - Utility-first styling
+- 🖼️ **Nuxt Image** - Optimized images with automatic resizing and modern format support
 - 🌙 **Dark mode** - Light/dark theme switching
 - 🎨 **Color themes** - Customizable primary colors
 - 📱 **Responsive** - Mobile-first design
