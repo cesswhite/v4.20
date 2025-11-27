@@ -15,7 +15,7 @@
                     <br>
                     Minimal, Fast, and Developer-Friendly
                 </p>
-                <div class="w-full flex items-center justify-center gap-2">
+                <div class="w-auto  flex items-center justify-center gap-2 h-10">
                     <LazyAppSwitchMode />
                     <LazyAppSwitchPrimaryColor />
                 </div>
