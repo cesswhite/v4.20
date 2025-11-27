@@ -8,7 +8,7 @@ export const useIndexStore = defineStore('useIndexStore', {
         // SSR hydration setup - see README.md "Pinia SSR Configuration" section for details
         // @ts-expect-error
         state.name = useLocalStorage('name', '')
-      },
+    },
 })
 
 if (import.meta.hot) {
