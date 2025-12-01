@@ -1,13 +1,26 @@
 {
-  "name": "nuxt-app",
-  "private": true,
+  "name": "v420",
+  "version": "1.0.0",
+  "description": "CLI para generar proyectos Nuxt con v420 template",
   "type": "module",
+  "bin": {
+    "v420": "./cli/index.ts"
+  },
+  "keywords": [
+    "nuxt",
+    "template",
+    "cli",
+    "v420"
+  ],
+  "author": "",
+  "license": "MIT",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test:cli": "bun run cli/index.ts"
   },
   "dependencies": {
     "@nuxt/image": "2.0.0",
@@ -19,7 +32,8 @@
     "vue-router": "latest"
   },
   "devDependencies": {
-    "typescript": "5.9.3",
-    "vue-tsc": "3.2.5"
+    "@types/bun": "^1.3.3",
+    "typescript": "5.9.2",
+    "vue-tsc": "3.0.6"
   }
 }
