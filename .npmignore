@@ -1,0 +1,14 @@
+node_modules
+.nuxt
+.output
+dist
+dist-ssr
+.git
+.gitignore
+*.log
+.DS_Store
+test
+test-*
+.vscode
+.idea
+

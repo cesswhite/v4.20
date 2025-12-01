@@ -1,19 +1,40 @@
 {
   "name": "v420",
   "version": "1.0.0",
-  "description": "CLI para generar proyectos Nuxt con v420 template",
+  "description": "CLI to generate Nuxt projects with v420 template",
   "type": "module",
   "bin": {
     "v420": "./cli/index.ts"
   },
+  "files": [
+    "cli",
+    "app",
+    "public",
+    "server",
+    "nuxt.config.ts",
+    "tsconfig.json",
+    "tsconfig.cli.json",
+    "package.json",
+    "README.md"
+  ],
   "keywords": [
     "nuxt",
+    "nuxt4",
     "template",
     "cli",
-    "v420"
+    "v420",
+    "nuxt-ui",
+    "starter"
   ],
   "author": "",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cesswhite/v420.git"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
