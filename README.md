@@ -35,6 +35,7 @@
 
 - **Node.js** (≥ 18.x)
 - **[Bun](https://bun.sh/)** (recommended) or npm/yarn
+- **git** (required if you use the CLI generator)
 
 ### ⚡ Installation
 
@@ -45,6 +46,29 @@ cd v420
 
 # Install dependencies
 bun i
+```
+
+## 🧰 CLI (project generator)
+
+This repo ships a `v420` CLI that **clones the template repo** into a new folder and then updates your theme colors.
+
+### Usage
+
+```sh
+v420 my-app
+```
+
+Optional:
+
+```sh
+v420 my-app --repo https://github.com/cesswhite/v420.git --branch main
+v420 my-app --keep-git
+```
+
+Environment overrides:
+
+```sh
+V420_TEMPLATE_REPO=https://github.com/cesswhite/v420.git V420_TEMPLATE_BRANCH=main v420 my-app
 ```
 
 ### 🛠️ Development

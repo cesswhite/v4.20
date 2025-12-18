@@ -6,6 +6,13 @@ type ColorsConfig = {
   neutral: string
 }
 
+type CliOptions = {
+  projectName?: string
+  repo?: string
+  branch?: string
+  keepGit?: boolean
+}
+
 const PRIMARY_COLORS = [
 'red', 'orange', 'amber', 'yellow',
   'lime', 'green', 'emerald', 'teal', 'cyan', 'sky', 'blue',
@@ -26,6 +33,8 @@ const EXCLUDED_DIRS = new Set([
   'dist-ssr',
   'cli'
 ])
+
+const DEFAULT_REPO_URL = 'https://github.com/cesswhite/v420.git'
 
 function joinPath(...parts: string[]): string {
   return parts.join('/').replace(/\/+/g, '/')
@@ -169,6 +178,89 @@ async function ensureEmptyDir(dir: string) {
   }
 }
 
+function parseArgs(argv: string[]): CliOptions {
+  const options: CliOptions = {}
+
+  for (let i = 0; i < argv.length; i++) {
+    const arg = argv[i]
+
+    if (arg === '--help' || arg === '-h') {
+      console.log(`
+v420 - Nuxt template generator
+
+Usage:
+  v420 [projectName] [--repo <url>] [--branch <name>] [--keep-git]
+
+Environment:
+  V420_TEMPLATE_REPO     Override default repo URL
+  V420_TEMPLATE_BRANCH   Override default branch
+`)
+      process.exit(0)
+    }
+
+    if (!arg.startsWith('-') && !options.projectName) {
+      options.projectName = arg
+      continue
+    }
+
+    if (arg === '--repo') {
+      options.repo = argv[i + 1]
+      i++
+      continue
+    }
+
+    if (arg === '--branch') {
+      options.branch = argv[i + 1]
+      i++
+      continue
+    }
+
+    if (arg === '--keep-git') {
+      options.keepGit = true
+      continue
+    }
+  }
+
+  return options
+}
+
+function sanitizeProjectName(input: string): string {
+  const trimmed = input.trim()
+  if (!trimmed) return 'v420-app'
+  return trimmed.replace(/\s+/g, '-')
+}
+
+async function gitCloneRepo(params: { repoUrl: string; branch?: string; targetDir: string }) {
+  const { repoUrl, branch, targetDir } = params
+  const chosenBranch = branch?.trim() ? branch.trim() : undefined
+
+  try {
+    if (chosenBranch) {
+      await Bun.$`git clone --depth 1 --branch ${chosenBranch} ${repoUrl} ${targetDir}`
+    } else {
+      await Bun.$`git clone --depth 1 ${repoUrl} ${targetDir}`
+    }
+  } catch (e) {
+    throw new Error(
+      `Failed to clone template repo. Make sure "git" is installed and you have network access.\n` +
+      `Repo: ${repoUrl}${chosenBranch ? ` (branch: ${chosenBranch})` : ''}\n` +
+      `Destination: ${targetDir}\n` +
+      `Original error: ${e instanceof Error ? e.message : String(e)}`
+    )
+  }
+}
+
+async function removeGitDir(targetDir: string) {
+  const gitDir = joinPath(targetDir, '.git')
+  if (!(await pathExists(gitDir))) return
+
+  try {
+    await Bun.$`rm -rf ${gitDir}`.quiet()
+  } catch {
+    // Ignore
+  }
+}
+
 async function copyDir(source: string, destination: string) {
   try {
     await Bun.$`mkdir -p ${destination}`.quiet()
@@ -252,25 +344,26 @@ async function updatePackageName(targetDir: string, projectName: string) {
 async function main() {
   console.log('🌿 Welcome to v420 template generator 🌿 \n')
 
-  const projectName = await ask('Project name', 'v420-app')
+  const options = parseArgs(process.argv.slice(2))
+  const projectName = options.projectName
+    ? sanitizeProjectName(options.projectName)
+    : sanitizeProjectName(await ask('Project name', 'v420-app'))
   
   const primary = await selectFromList(PRIMARY_COLORS, 'Select primary color:', 'emerald')
   const neutral = await selectFromList(GRAYSCALE_COLORS, 'Select gray/neutral color:', 'zinc')
   
   const targetDir = resolvePath(projectName)
-  const sourceRoot = import.meta.dir 
-    ? joinPath(import.meta.dir, '..')
-    : process.cwd()
-
-  const targetDirName = projectName
-  EXCLUDED_DIRS.add(targetDirName)
+  const repoUrl = (options.repo || process.env.V420_TEMPLATE_REPO || DEFAULT_REPO_URL).trim()
+  const branch = (options.branch || process.env.V420_TEMPLATE_BRANCH || '').trim()
 
   await ensureEmptyDir(targetDir)
 
   console.log(`\n   Creating project at: ${targetDir}`)
-  await copyDir(sourceRoot, targetDir)
-  
-  EXCLUDED_DIRS.delete(targetDirName)
+  console.log(`   Cloning template from: ${repoUrl}${branch ? ` (branch: ${branch})` : ''}`)
+  await gitCloneRepo({ repoUrl, branch, targetDir })
+  if (!options.keepGit) {
+    await removeGitDir(targetDir)
+  }
   
 
   console.log('   Applying selected colors...')
