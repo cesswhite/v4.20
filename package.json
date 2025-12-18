@@ -1,10 +1,10 @@
 {
   "name": "v420",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI to generate Nuxt projects with v420 template",
   "type": "module",
   "bin": {
-    "v420": "./cli/index.ts"
+    "v420": "cli/index.ts"
   },
   "files": [
     "cli",
@@ -30,7 +30,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cesswhite/v420.git"
+    "url": "git+https://github.com/cesswhite/v420.git"
   },
   "engines": {
     "bun": ">=1.0.0"

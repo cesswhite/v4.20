@@ -25,23 +25,26 @@ Minimal, fast Nuxt 4 boilerplate aimed at developers. Uses the latest Nuxt relea
 
 ## Quick Start
 
-**Option 1 – CLI (recommended)**  
-Scaffold a new project without cloning. Requires [Bun](https://bun.sh/) or npm/yarn with `npx`/`yarn dlx`:
+## ✨ Features
 
-```sh
-bunx v420
-```
+- 🎯 **Nuxt 4** - Latest version with enhanced performance
+- 🗄️ **Pinia** - Modern state management
+- 🎨 **Tailwind CSS** - Utility-first styling
+- 🖼️ **Nuxt Image** - Optimized images with automatic resizing and modern format support
+- 🌙 **Dark mode** - Light/dark theme switching
+- 🎨 **Color themes** - Customizable primary colors
+- 📱 **Responsive** - Mobile-first design
+- 🔍 **SEO ready** - Optimized meta tags
 
-This runs the v420 CLI to generate a project in the current directory (or a target path). No git clone or manual dependency install needed.
+## 🚀 Quick Start
 
-**Option 2 – Clone and run locally**
+### 📋 Prerequisites
 
-### Prerequisites
+- **Node.js** (≥ 18.x)
+- **[Bun](https://bun.sh/)** (recommended) or npm/yarn
+- **git** (required if you use the CLI generator)
 
-- **Node.js** ≥ 18.x
-- **Bun** (recommended) or npm/yarn
-
-### Installation
+### ⚡ Installation
 
 ```sh
 git clone https://github.com/{username}/v420.git
@@ -49,7 +52,30 @@ cd v420
 bun i
 ```
 
-### Development
+## 🧰 CLI (project generator)
+
+This repo ships a `v420` CLI that **clones the template repo** into a new folder and then updates your theme colors.
+
+### Usage
+
+```sh
+v420 my-app
+```
+
+Optional:
+
+```sh
+v420 my-app --repo https://github.com/cesswhite/v420.git --branch main
+v420 my-app --keep-git
+```
+
+Environment overrides:
+
+```sh
+V420_TEMPLATE_REPO=https://github.com/cesswhite/v420.git V420_TEMPLATE_BRANCH=main v420 my-app
+```
+
+### 🛠️ Development
 
 ```sh
 bun dev
