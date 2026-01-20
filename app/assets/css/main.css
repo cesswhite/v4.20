@@ -1,6 +1,5 @@
 @import "tailwindcss" theme(static);
 @import "@nuxt/ui";
-@import "./global.css" layer(utilities);
 
 /* See config: https://ui3.nuxt.dev/getting-started/theme#colors */
 @theme {

@@ -11,12 +11,12 @@
                 </h1>
                 <p
                     class="font-normal text-base font-family-inter tracking-tighter text-center text-dark-950/60 dark:text-dark-50/60">
-                    Opinionated Starter Template
+                    Opinionated Nuxt 4 Starter Template
                     <br>
                     Minimal, Fast, and Developer-Friendly
                 </p>
                 <div class="w-auto  flex items-center justify-center gap-2 h-10">
-                    <LazyAppSwitchMode />
+                    <UColorModeButton color="primary" variant="link" size="lg" class="cursor-pointer" />
                     <LazyAppSwitchPrimaryColor />
                 </div>
                 <div class="flex flex-col items-center gap-y-4 mx-auto w-full sm:w-1/2 xl:w-1/3">
