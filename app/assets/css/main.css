@@ -30,7 +30,3 @@
   --color-dark-900: var(--ui-color-neutral-900);
   --color-dark-950: var(--ui-color-neutral-950);
 }
-/* For Testing purposes */
-.\? {
-  outline: 1px solid red;
-}

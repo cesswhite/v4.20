@@ -60,6 +60,8 @@ function openToast() {
 }
 /* // */
 
+
+/* SEO: Configure SEO Meta Tags with your own information */
 useSeoMeta({
     title: "v4.20 | Opinionated Nuxt Starter Template",
     ogTitle: "v4.20 | Opinionated Nuxt Starter Template",
