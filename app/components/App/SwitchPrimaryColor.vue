@@ -61,7 +61,6 @@
             <USkeleton class="size-8" />
         </template>
     </ClientOnly>
-
 </template>
 
 <script setup lang="ts">
