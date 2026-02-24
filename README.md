@@ -2,7 +2,7 @@
 
 # v4.20: The real Nuxt 4 Starter
 
-Minimal, fast Nuxt 4 boilerplate aimed at developers. Uses the latest Nuxt releases and stays production-ready whether you keep the project small or scale it.
+Minimal, opinionated Nuxt 4 starter for developers. Uses the latest Nuxt releases and stays production-ready whether you keep the project small or scale it.
 
 ## Tech Stack
 
@@ -25,21 +25,24 @@ Minimal, fast Nuxt 4 boilerplate aimed at developers. Uses the latest Nuxt relea
 
 ## Quick Start
 
-**Option 1 – CLI (recommended)**  
-Scaffold a new project without cloning. Requires [Bun](https://bun.sh/) or npm/yarn with `npx`/`yarn dlx`:
+## Features
 
-```sh
-bunx v420
-```
+- **Nuxt 4** - Latest version with enhanced performance
+- **Pinia** - Modern state management
+- **Tailwind CSS** - Utility-first styling
+- **Nuxt Image** - Optimized images with automatic resizing and modern format support
+- **Dark mode** - Light/dark theme switching
+- **Color themes** - Customizable primary colors
+- **Responsive** - Mobile-first design
+- **SEO ready** - Optimized meta tags
 
-This runs the v420 CLI to generate a project in the current directory (or a target path). No git clone or manual dependency install needed.
-
-**Option 2 – Clone and run locally**
+## Quick Start
 
 ### Prerequisites
 
-- **Node.js** ≥ 18.x
-- **Bun** (recommended) or npm/yarn
+- **Node.js** (≥ 18.x)
+- **[Bun](https://bun.sh/)** (recommended) or npm/yarn
+- **git** (required if you use the CLI generator)
 
 ### Installation
 
@@ -48,6 +51,39 @@ git clone https://github.com/{username}/v420.git
 cd v420
 bun i
 ```
+
+## Create a new project from CLI
+
+Run:
+
+```sh
+bunx v420
+```
+
+or
+
+```sh
+npx v420
+```
+
+The CLI will ask for a project name and theme colors, then create the project. Then `cd` into the folder and run `bun i && bun dev`.
+
+## Comparison with `npm create nuxt@latest`
+
+The official Nuxt CLI is excellent and we're fully inspired by it. v420 is an opinionated alternative that gets you from zero to a configured app in one command and two choices (project name + primary/neutral colors), with defaults that match real-world use so you can focus on building instead of wiring.
+
+| Area            | What we do differently                                                                                                                                                                                                                                                                  |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Colors**      | The Nuxt CLI lets you opt into Nuxt UI but does not let you pick **primary** and **neutral** palettes. Choosing them up front is essential: you avoid mid-project decisions and layout shifts when theme tokens aren’t set yet. We prompt for both and apply them before the first run. |
+| **Modules**     | Nuxt’s module ecosystem is great; more modules aren’t always better. We ship only what you need to scale from day one: Nuxt UI, Nuxt Image and Pinia. You can add more when you need them.                                                                                              |
+| **Layouts**     | Real apps (sites, dashboards, SaaS) rely on layouts. The official CLI doesn’t include a layout example. We do: a default layout with navigation and theme controls so you see how layouts work immediately.                                                                             |
+| **Pages**       | The Nuxt CLI creates a `pages/` folder with a single file. We create two pages and a simple flow between them so the role of `pages/` and file-based routing is clear from the start.                                                                                                   |
+| **Components**  | We keep components close to Nuxt conventions: folder-based organization (e.g. `App/`) so it’s obvious which pieces are app-wide, without relying on prefixes.                                                                                                                           |
+| **Composables** | We include working composable examples so you see how they behave in a real app, including the [Nuxt UI doc example](https://ui.nuxt.com/) for dynamically updating the favicon from the theme color.                                                                                   |
+| **Plugins**     | The official setup doesn’t show how to use plugins for client-side theme bootstrapping. We use a small plugin that applies primary and neutral colors **before** the app mounts, so there’s no flash or layout shift from default values loading late.                                  |
+| **Stores**      | We ship a minimal Pinia store with **SSR hydration** and persistence via `useLocalStorage` from `@vueuse/core` (bundled with Nuxt UI), plus HMR-friendly setup so you have a clear pattern for global state.                                                                            |
+
+On top of that you get: toast usage, `useHead` and SEO meta patterns, and a few more conventions documented in the repo. Again, the Nuxt CLI is fantastic; v420 is a more opinionated, ready-to-extend baseline so you can start coding a bit faster—one command, two choices, and the rest is yours.
 
 ### Development
 
@@ -96,10 +132,10 @@ See [Pinia SSR documentation](https://pinia.vuejs.org/cookbook/composables.html#
 
 This repo ships with [Cursor](https://cursor.com/) agent skills in `.cursor/skills/`. The AI uses them for Nuxt and UI work in this codebase.
 
-| Skill | Purpose |
-|-------|---------|
-| **nuxt** | Nuxt framework: SSR, auto-imports, file-based routing, server routes, `useFetch`, middleware, hybrid rendering. Use when editing config, routes, data fetching, or deployment. |
-| **nuxt-ui** | [@nuxt/ui](https://ui.nuxt.com/) v4: 125+ accessible Vue components, Tailwind theming, forms, dashboards. Use when building or customizing UI, themes, or layouts. |
+| Skill       | Purpose                                                                                                                                                                        |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **nuxt**    | Nuxt framework: SSR, auto-imports, file-based routing, server routes, `useFetch`, middleware, hybrid rendering. Use when editing config, routes, data fetching, or deployment. |
+| **nuxt-ui** | [@nuxt/ui](https://ui.nuxt.com/) v4: 125+ accessible Vue components, Tailwind theming, forms, dashboards. Use when building or customizing UI, themes, or layouts.             |
 
 Skills are loaded automatically when the project is opened in Cursor; no extra setup is required.
 
