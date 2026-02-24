@@ -6,18 +6,6 @@
   --font-family-inter: "Inter", sans-serif;
   --font-family-instrument: "Instrument Serif", serif;
 
-  --color-primary-50: var(--ui-color-primary-50);
-  --color-primary-100: var(--ui-color-primary-100);
-  --color-primary-200: var(--ui-color-primary-200);
-  --color-primary-300: var(--ui-color-primary-300);
-  --color-primary-400: var(--ui-color-primary-400);
-  --color-primary-500: var(--ui-color-primary-500);
-  --color-primary-600: var(--ui-color-primary-600);
-  --color-primary-700: var(--ui-color-primary-700);
-  --color-primary-800: var(--ui-color-primary-800);
-  --color-primary-900: var(--ui-color-primary-900);
-  --color-primary-950: var(--ui-color-primary-950);
-
   --color-dark-50: var(--ui-color-neutral-50);
   --color-dark-100: var(--ui-color-neutral-100);
   --color-dark-200: var(--ui-color-neutral-200);
@@ -29,4 +17,15 @@
   --color-dark-800: var(--ui-color-neutral-800);
   --color-dark-900: var(--ui-color-neutral-900);
   --color-dark-950: var(--ui-color-neutral-950);
+}
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
