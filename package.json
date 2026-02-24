@@ -1,6 +1,6 @@
 {
   "name": "v420",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "CLI to generate Nuxt projects with v420 template",
   "type": "module",
   "bin": {
