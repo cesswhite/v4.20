@@ -1,6 +1,6 @@
 {
   "name": "v420",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "CLI to generate Nuxt projects with v420 template",
   "type": "module",
   "bin": {
@@ -15,7 +15,8 @@
     "tsconfig.json",
     "tsconfig.cli.json",
     "package.json",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ],
   "keywords": [
     "nuxt",

@@ -1,6 +1,8 @@
 #!/usr/bin/env bun
 /// <reference types="bun-types" />
 
+import { DEFAULT_NEUTRAL, DEFAULT_PRIMARY, GRAYSCALE_COLORS, PRIMARY_COLORS } from './themeColors'
+
 type ColorsConfig = {
   primary: string
   neutral: string
@@ -12,16 +14,6 @@ type CliOptions = {
   branch?: string
   keepGit?: boolean
 }
-
-const PRIMARY_COLORS = [
-'red', 'orange', 'amber', 'yellow',
-  'lime', 'green', 'emerald', 'teal', 'cyan', 'sky', 'blue',
-  'indigo', 'violet', 'purple', 'fuchsia', 'pink', 'rose'
-]
-
-const GRAYSCALE_COLORS = [
-  'stone', 'zinc', 'gray', 'slate', 'neutral'
-]
 
 const EXCLUDED_DIRS = new Set([
   'node_modules',
@@ -349,8 +341,8 @@ async function main() {
     ? sanitizeProjectName(options.projectName)
     : sanitizeProjectName(await ask('Project name', 'v420-app'))
   
-  const primary = await selectFromList(PRIMARY_COLORS, 'Select primary color:', 'emerald')
-  const neutral = await selectFromList(GRAYSCALE_COLORS, 'Select gray/neutral color:', 'zinc')
+  const primary = await selectFromList([...PRIMARY_COLORS], 'Select primary color:', DEFAULT_PRIMARY)
+  const neutral = await selectFromList([...GRAYSCALE_COLORS], 'Select gray/neutral color:', DEFAULT_NEUTRAL)
   
   const targetDir = resolvePath(projectName)
   const repoUrl = (options.repo || process.env.V420_TEMPLATE_REPO || DEFAULT_REPO_URL).trim()
