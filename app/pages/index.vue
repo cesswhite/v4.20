@@ -35,6 +35,7 @@
 
 <script setup lang="ts">
 /* Delete this block and start building your app. Happy coding! */
+
 const { name } = storeToRefs(useIndexStore());
 const toast = useToast();
 
@@ -43,18 +44,22 @@ function handleGoToAbout() {
         openToast();
     } else {
         toast.add({
+            id: 'warning-name-required',
             title: 'Oops!',
             description: 'Please enter your name!',
-            color: 'warning'
+            color: 'neutral',
+            duration: 0,
         })
     }
 }
 
 function openToast() {
     toast.add({
+        id: 'success-toast',
         title: 'Hey!',
         description: 'Hello! You just clicked the button!',
-        color: 'success'
+        color: 'neutral',
+        duration: 0,
     })
     navigateTo('/about')
 }
