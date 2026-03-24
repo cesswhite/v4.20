@@ -1,6 +1,5 @@
 ![v4.20_cover_image](https://github.com/user-attachments/assets/287dd849-7541-471d-9a7c-a1b2211b8a2e)
 
-
 # v4.20: The real Nuxt 4 Starter
 
 Minimal, opinionated Nuxt 4 starter for developers. Uses the latest Nuxt releases and stays production-ready whether you keep the project small or scale it.
@@ -56,7 +55,7 @@ The CLI will ask for a project name and theme colors, then create the project. T
 
 ## Comparison with `npm create nuxt@latest`
 
-The official Nuxt CLI is excellent and we're fully inspired by it. v420 is an opinionated alternative that gets you from zero to a configured app in one command and two choices (project name + primary/neutral colors), with defaults that match real-world use so you can focus on building instead of wiring.
+The official Nuxt CLI is excellent and we're fully inspired by it. v4.20 is an opinionated alternative that gets you from zero to a configured app in one command and two choices (project name + primary/neutral colors), with defaults that match real-world use so you can focus on building instead of wiring.
 
 | Area            | What we do differently                                                                                                                                                                                                                                                                  |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -69,7 +68,7 @@ The official Nuxt CLI is excellent and we're fully inspired by it. v420 is an op
 | **Plugins**     | The official setup doesn’t show how to use plugins for client-side theme bootstrapping. We use a small plugin that applies primary and neutral colors **before** the app mounts, so there’s no flash or layout shift from default values loading late.                                  |
 | **Stores**      | We ship a minimal Pinia store with **SSR hydration** and persistence via `useLocalStorage` from `@vueuse/core` (bundled with Nuxt UI), plus HMR-friendly setup so you have a clear pattern for global state.                                                                            |
 
-On top of that you get: toast usage, `useHead` and SEO meta patterns, and a few more conventions documented in the repo. Again, the Nuxt CLI is fantastic; v420 is a more opinionated, ready-to-extend baseline so you can start coding a bit faster—one command, two choices, and the rest is yours.
+On top of that you get: toast usage, `useHead` and SEO meta patterns, and a few more conventions documented in the repo. Again, the Nuxt CLI is fantastic; v4.20 is a more opinionated, ready-to-extend baseline so you can start coding a bit faster—one command, two choices, and the rest is yours.
 
 ### Development
 
