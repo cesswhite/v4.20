@@ -1,4 +1,5 @@
-![v4.20_cover_image](https://github.com/user-attachments/assets/db3b68fb-4677-4326-96b5-8a24e92a91a4)
+![v4.20_cover_image](https://github.com/user-attachments/assets/287dd849-7541-471d-9a7c-a1b2211b8a2e)
+
 
 # v4.20: The real Nuxt 4 Starter
 
