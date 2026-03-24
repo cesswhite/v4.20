@@ -15,19 +15,6 @@ Minimal, opinionated Nuxt 4 starter for developers. Uses the latest Nuxt release
 
 ## Features
 
-- **Nuxt 4** – Current major with improved performance and DX
-- **Pinia** – Centralized state with SSR hydration
-- **Tailwind CSS** – Utility-first styling and design tokens
-- **Nuxt Image** – Resizing, modern formats, and provider abstraction
-- **Dark mode** – Theme toggle (light/dark)
-- **Color themes** – Configurable primary palette
-- **Responsive** – Mobile-first layout
-- **SEO** – Meta tags and head configuration
-
-## Quick Start
-
-## Features
-
 - **Nuxt 4** - Latest version with enhanced performance
 - **Pinia** - Modern state management
 - **Tailwind CSS** - Utility-first styling
@@ -36,8 +23,6 @@ Minimal, opinionated Nuxt 4 starter for developers. Uses the latest Nuxt release
 - **Color themes** - Customizable primary colors
 - **Responsive** - Mobile-first design
 - **SEO ready** - Optimized meta tags
-
-## Quick Start
 
 ### Prerequisites
 
