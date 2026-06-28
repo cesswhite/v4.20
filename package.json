@@ -12,13 +12,13 @@
   },
   "dependencies": {
     "@nuxt/image": "2.0.0",
-    "@nuxt/ui": "4.8.2",
+    "@nuxt/ui": "4.9.0",
     "@pinia/nuxt": "0.11.3",
-    "nuxt": "4.4.7",
+    "nuxt": "4.4.8",
     "pinia": "3.0.4"
   },
   "devDependencies": {
     "typescript": "6.0.3",
-    "vue-tsc": "3.3.3"
+    "vue-tsc": "3.3.5"
   }
 }
