@@ -41,18 +41,9 @@ function goBack() {
 }
 /* // */
 
-/* SEO: Configure SEO Meta Tags with your own information */
-useSeoMeta({
-    title: "v4.20 | About",
-    ogTitle: "v4.20 | About",
-    description: "Opinionated Nuxt 4 Starter Template Minimal, Fast, and Developer-Friendly by Eco Development Studios",
-    ogDescription: "Opinionated Nuxt 4 Starter Template Minimal, Fast, and Developer-Friendly by Eco Development Studios",
-    ogImage: "https://res.cloudinary.com/dpvsklksg/image/upload/ecov4/v420-og-image.webp",
-    ogUrl: 'https://v420.ecostudios.dev/about',
-    twitterImage: "https://res.cloudinary.com/dpvsklksg/image/upload/ecov4/v420-og-image.webp",
-    twitterTitle: "v4.20 | About",
-    twitterDescription: "Opinionated Nuxt 4 Starter Template Minimal, Fast, and Developer-Friendly by Eco Development Studios",
-    ogImageWidth: 1200,
-    ogImageHeight: 630,
-});
+useSiteSeo({
+    path: '/about',
+    title: 'v4.20 | About',
+    description: 'About v4.20, a Nuxt starter template focused on minimalism, performance, and developer experience by Eco Development Studios.',
+})
 </script>
