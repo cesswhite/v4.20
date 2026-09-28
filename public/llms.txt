@@ -1,0 +1,15 @@
+# v4.20
+
+> A Nuxt starter template demo by Eco Development Studios.
+
+The public demo has a homepage and an About page. Visitors can enter a name, view the greeting on the About page, and choose a color theme.
+
+## Public pages
+
+- [Home](https://v420.ecostudios.dev/)
+- [About](https://v420.ecostudios.dev/about)
+
+## References
+
+- [Sitemap](https://v420.ecostudios.dev/sitemap.xml)
+- [Publisher: Eco Development Studios](https://www.ecostudios.dev/)
