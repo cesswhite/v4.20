@@ -2,7 +2,7 @@
 
 # v4.20: The real Nuxt 4 Starter
 
-Minimal, opinionated Nuxt 4 starter for developers. Uses the latest Nuxt releases and stays production-ready whether you keep the project small or scale it.
+Minimal, opinionated Nuxt 4 starter for developers. Uses pinned Nuxt dependencies and includes a two-page demo you can adapt to a new app.
 
 ## Tech Stack
 
@@ -14,7 +14,7 @@ Minimal, opinionated Nuxt 4 starter for developers. Uses the latest Nuxt release
 
 ## Features
 
-- **Nuxt 4** - Latest version with enhanced performance
+- **Nuxt 4** - Pinned framework version in `package.json` and `bun.lock`
 - **Pinia** - Modern state management
 - **Tailwind CSS** - Utility-first styling
 - **Nuxt Image** - Optimized images with automatic resizing and modern format support
@@ -25,8 +25,8 @@ Minimal, opinionated Nuxt 4 starter for developers. Uses the latest Nuxt release
 
 ### Prerequisites
 
-- **Node.js** (≥ 18.x)
-- **[Bun](https://bun.sh/)** (recommended) or npm/yarn
+- **Node.js** matching Nuxt 4.5.2: `^22.19.0 || ^24.11.0 || >=26.0.0`
+- **[Bun](https://bun.sh/)** (uses the committed `bun.lock`)
 - **git** (required if you use the CLI generator)
 
 ### Installation
@@ -34,7 +34,7 @@ Minimal, opinionated Nuxt 4 starter for developers. Uses the latest Nuxt release
 ```sh
 git clone https://github.com/{username}/v420.git
 cd v420
-bun i
+bun install --frozen-lockfile
 ```
 
 ## Create a new project from CLI
@@ -61,7 +61,7 @@ The official Nuxt CLI is excellent and we're fully inspired by it. v4.20 is an o
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Colors**      | The Nuxt CLI lets you opt into Nuxt UI but does not let you pick **primary** and **neutral** palettes. Choosing them up front is essential: you avoid mid-project decisions and layout shifts when theme tokens aren’t set yet. We prompt for both and apply them before the first run. |
 | **Modules**     | Nuxt’s module ecosystem is great; more modules aren’t always better. We ship only what you need to scale from day one: Nuxt UI, Nuxt Image and Pinia. You can add more when you need them.                                                                                              |
-| **Layouts**     | Real apps (sites, dashboards, SaaS) rely on layouts. The official CLI doesn’t include a layout example. We do: a default layout with navigation and theme controls so you see how layouts work immediately.                                                                             |
+| **Layouts**     | Real apps (sites, dashboards, SaaS) rely on layouts. The demo includes a default page-surface wrapper; navigation and theme controls live in the pages and components.                                                                             |
 | **Pages**       | The Nuxt CLI creates a `pages/` folder with a single file. We create two pages and a simple flow between them so the role of `pages/` and file-based routing is clear from the start.                                                                                                   |
 | **Components**  | We keep components close to Nuxt conventions: folder-based organization (e.g. `App/`) so it’s obvious which pieces are app-wide, without relying on prefixes.                                                                                                                           |
 | **Composables** | We include working composable examples so you see how they behave in a real app, including the [Nuxt UI doc example](https://ui.nuxt.com/) for dynamically updating the favicon from the theme color.                                                                                   |
@@ -81,7 +81,7 @@ Dev server runs at `http://localhost:3000` with HMR.
 ### Production build
 
 ```sh
-bun build
+bun run build
 ```
 
 Output is in `.output`. Serve with `bun run preview` or deploy the generated files to your host.
@@ -101,14 +101,14 @@ app/
 
 - **Color Picker** – Primary color customization (theme token)
 - **Logo** – Site logo used in layout/header
-- **Layout** – Responsive shell with navigation and theme toggle
+- **Layout** – Default page-surface wrapper; navigation and theme controls are composed by pages and components
 
 ## Pinia SSR configuration
 
 The template ships with a Pinia store set up for **SSR hydration**:
 
-- **Hydration**: Initial state is not serialized; values are read on the client (e.g. from `localStorage`) after hydration.
-- **SSR**: Safe for server-side rendering with client-only state.
+- **Hydration**: The store’s `hydrate` hook recreates the `name` localStorage binding on the client; inspect `app/stores/index.ts` when extending this pattern.
+- **SSR**: The demo includes a client hydration hook; new browser-state behavior still needs SSR and hydration validation.
 - **TypeScript**: Uses `@ts-expect-error` where required due to [Pinia typing limitations](https://github.com/vuejs/pinia/issues/2086#issuecomment-1493942501).
 
 See [Pinia SSR documentation](https://pinia.vuejs.org/cookbook/composables.html#SSR) for details.
@@ -131,3 +131,7 @@ Issues and pull requests are welcome.
 ## License
 
 MIT.
+
+## Agent and contributor guide
+
+Start with [AGENTS.md](AGENTS.md) and [docs/REPOSITORY_GUIDE.md](docs/REPOSITORY_GUIDE.md) for implemented behavior, code entry points, boundaries and repository commands.
