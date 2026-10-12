@@ -9,7 +9,7 @@ This is the Nuxt 4 starter/demo deployed at `https://v420.ecostudios.dev`. Its t
 | Entry file | Responsibility |
 | --- | --- |
 | [app/pages/index.vue](../app/pages/index.vue) | `/`; `handleGoToAbout` checks the name and `openToast` navigates. |
-| [app/pages/about.vue](../app/pages/about.vue) | `/about`; displays the stored name and `goBack` navigation. |
+| [app/pages/about.vue](../app/pages/about.vue) | `/about`; displays the stored name and a home link. |
 | [app/stores/index.ts](../app/stores/index.ts) | `useIndexStore`, VueUse localStorage and the client hydrate hook. |
 | [app/app.vue](../app/app.vue) | `UApp`, toaster, page/layout outlet and shared document head. |
 | [app/layouts/default.vue](../app/layouts/default.vue) | Page surface and slot wrapper. |
@@ -21,7 +21,7 @@ This is the Nuxt 4 starter/demo deployed at `https://v420.ecostudios.dev`. Its t
 
 ## State and rendering flow
 
-A non-empty name in `index.vue` triggers a toast and navigation to `/about`. Both pages read `useIndexStore`; the name uses localStorage key `name`. The theme control and plugin use `nuxt-ui-primary` / `nuxt-ui-neutral`. These are browser-storage keys, not environment variables.
+A non-empty name in `index.vue` triggers a toast and navigation to `/about`. The existing Enter control renders an anchor with `href="/about"` in server HTML; its click handler prevents default navigation and preserves the name validation and toast. The existing Back to Home control links to `/`. Both pages read `useIndexStore`; the name uses localStorage key `name`. The theme control and plugin use `nuxt-ui-primary` / `nuxt-ui-neutral`. These are browser-storage keys, not environment variables.
 
 Nuxt renders the shell on the server and hydrates client state. Browser-only favicon/theme operations require their current lifecycle guards. No account, database, upload API or business-product workflow is implemented. A saved name is a local preference, not an authenticated profile. External avatar/image/font requests can still occur; this is not an offline guarantee.
 

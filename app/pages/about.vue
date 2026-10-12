@@ -21,7 +21,7 @@
                     </UButton>
                 </div>
                 <div class="flex flex-col items-center gap-y-4 w-full">
-                    <UButton @click="goBack" variant="link" color="primary" icon="i-lucide-arrow-left"
+                    <UButton to="/" variant="link" color="primary" icon="i-lucide-arrow-left"
                         class="cursor-pointer">
                         Back to Home
                     </UButton>
@@ -36,9 +36,6 @@
 /* Delete this block and start building your app. Happy coding! */
 const { name } = storeToRefs(useIndexStore());
 
-function goBack() {
-    navigateTo('/')
-}
 /* // */
 
 useSiteSeo({
