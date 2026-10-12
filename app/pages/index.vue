@@ -22,7 +22,7 @@
                 <div class="flex flex-col items-center gap-y-4 mx-auto w-full sm:w-1/2 xl:w-1/3">
                     <UInput v-model="name" label="Name" placeholder="Name" class="w-full" size="lg" variant="outline"
                         @keyup.enter="handleGoToAbout" />
-                    <UButton block @click="handleGoToAbout" variant="solid" color="primary" size="lg"
+                    <UButton block to="/about" @click.prevent="handleGoToAbout" variant="solid" color="primary" size="lg"
                         class="cursor-pointer">
                         Enter
                     </UButton>
